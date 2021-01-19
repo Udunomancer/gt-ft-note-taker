@@ -10,4 +10,10 @@ module.exports = function(app) {
     app.get("/api/notes", function(req, res) {
         res.json(savedNotes);
     });
+
+    app.post("/api/notes", function(req, res) {
+        savedNotes.push(req.body);
+        console.log(savedNotes);
+        res.json(req.body);
+    });
 }
