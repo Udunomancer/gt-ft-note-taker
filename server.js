@@ -1,25 +1,26 @@
 // ===SERVER SETUP===
 // ---Importing required packages---
 const express = require("express");
-const path = require("path");
+const fs = require("fs");
 
 // ---Initialize Express app---
 let app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
 
 // ---Adding Middleware for data parsing---
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // ===ROUTES===
-// ---Basic route to main page---
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "public/index.html"));
-})
+//require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
-app.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "public/notes.html"));
-})
+// ===API ROUTES===
+// ---GET all note objects---
+// app.get("/api/notes", function(req, res) {
+//     let allNotes = fs.readFile(path.join(__dirname, "db/db.json"));
+//     return res.json
+// })
 
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
