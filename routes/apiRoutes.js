@@ -1,9 +1,10 @@
 // === ===
 const fs = require("fs");
 const path = require("path");
+const db = path.join(__dirname, "../db/db.json");
 
 // === ===
-let rawNotes = fs.readFileSync(path.join(__dirname, "../db/db.json"));
+let rawNotes = fs.readFileSync(db);
 let savedNotes = JSON.parse(rawNotes);
 
 module.exports = function(app) {
@@ -13,7 +14,13 @@ module.exports = function(app) {
 
     app.post("/api/notes", function(req, res) {
         savedNotes.push(req.body);
-        console.log(savedNotes);
+        fs.writeFileSync(db, JSON.stringify(savedNotes));
         res.json(req.body);
+    });
+
+    app.delete("/api/notes/:id", function(req, res) {
+        console.log("Delete");
+        console.log(req);
+        console.log(res);
     });
 }
