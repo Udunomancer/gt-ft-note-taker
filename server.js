@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // ===ROUTES===
-//require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 // ===API ROUTES===
