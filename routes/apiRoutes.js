@@ -21,6 +21,6 @@ module.exports = function(app) {
     });
 
     app.delete("/api/notes/:id", function(req, res) {
-        console.log(req.body);
+        console.log(req.params.id);
     });
 }
