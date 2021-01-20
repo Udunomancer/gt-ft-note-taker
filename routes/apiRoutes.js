@@ -13,14 +13,14 @@ module.exports = function(app) {
     });
 
     app.post("/api/notes", function(req, res) {
-        savedNotes.push(req.body);
+        let newNote = req.body;
+        newNote.id = savedNotes.length + 1;
+        savedNotes.push(newNote);
         fs.writeFileSync(db, JSON.stringify(savedNotes));
-        res.json(req.body);
+        res.json(newNote);
     });
 
     app.delete("/api/notes/:id", function(req, res) {
-        console.log("Delete");
-        console.log(req);
-        console.log(res);
+        console.log(req.body);
     });
 }
