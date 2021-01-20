@@ -8,7 +8,7 @@ Files to deploy an application that will write, save, and delete notes.
 * Backend storing data using a json file
 * Express used to connect to json and make GET/POST/DELETE requests
 
-Screenshot of page here
+![Image](assets/imgs/note_taker_screenshot.png)
 
 ## Table of Contents
 * [Installation](#installation)
