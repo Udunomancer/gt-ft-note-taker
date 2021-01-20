@@ -25,7 +25,7 @@ Files to deploy an application that will write, save, and delete notes.
 
 ## <a name="usage"></a> Usage
 
-* The program should allow present the user with an html file
+* The program should present the user with an html file
   * index.html should present a home page with links to the notes.html.
   * notes.html should present an interactive page.
 * On notes.html the user should be able to
