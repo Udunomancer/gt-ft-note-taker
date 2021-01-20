@@ -46,8 +46,8 @@ If issues are found, please contact me using gmail/GitHub profile found in the Q
 
 To confirm functionality:
 * All notes listed on db.json should be displayed on notes.html
-* Adding a new note should save the note data to notes.html and display the new note on the page
-* Deleting a note should remove the note data from notes.html and remove the note from the page display
+* Adding a new note should save the note data to db.json and display the new note on the page
+* Deleting a note should remove the note data from db.json and remove the note from the page display
 
 ## <a name="questions"></a> Questions
 
